@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Note to Self Options</title>
+    <script>
+      function saveOptions() {
+        var emailInput = document.getElementById("email");
+        localStorage["emailAddress"] = emailInput.value;
+
+        // Update status to let user know options were saved.
+        var status = document.getElementById("status");
+        status.innerHTML = "Options Saved.";
+        setTimeout(function() {
+          status.innerHTML = "";
+        }, 750);
+      }
+
+      // Restores select box state to saved value from localStorage.
+      function restoreOptions() {
+        var emailAddress = localStorage["emailAddress"];
+        if (!emailAddress) {
+          return;
+        }
+        var emailInput = document.getElementById("email");
+        emailInput.value = emailAddress;
+      }
+    </script>
+  </head>
+  <body onload="restoreOptions()">
+    <label for="email">Email: </label>
+    <input type="text" id="email" name="email">
+    <button onclick="saveOptions()">Save</button>
+    <span id="status"></span>
+  </body>
+</html>

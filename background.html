@@ -1,9 +1,16 @@
 <html>
   <head>
     <script>
+      function getEmailAddress() {
+        if (window.localStorage == null) {
+          return "";
+          } else if (window.localStorage["emailAddress"] == null) {
+          return "";
+        }
+        return window.localStorage["emailAddress"];
+      }
       function openNoteLink() {
-        var url = "mailto:me@masontang.com?";
-        console.log("URL: " + url);
+        var url = "mailto:" + getEmailAddress();
         chrome.tabs.create({ url: url });
       }
       chrome.browserAction.onClicked.addListener(function(tab) {
