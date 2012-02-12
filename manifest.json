@@ -1,0 +1,11 @@
+{
+  "name": "Note to Self",
+  "version": "1.0",
+  "description": "An extension for e-mailing notes to yourself.",
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "mail_icon.gif"
+  },
+  "permissions": []
+}
