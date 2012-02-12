@@ -5,7 +5,7 @@
   "background_page": "background.html",
   "options_page": "options.html",
   "browser_action": {
-    "default_icon": "mail_icon.gif"
+    "default_icon": "icon_pencil.png"
   },
   "permissions": []
 }
